@@ -1,0 +1,76 @@
+.payment-methods {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.payment-methods-label {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.payment-methods.is-light .payment-methods-label {
+  color: var(--ink-soft);
+}
+
+.payment-methods.is-dark .payment-methods-label {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.payment-methods-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.payment-methods-list li {
+  display: grid;
+  place-items: center;
+  height: 2rem;
+  min-width: 3.1rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.45rem;
+  overflow: hidden;
+}
+
+.payment-methods.is-light .payment-methods-list li {
+  background: #fff;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.payment-methods.is-dark .payment-methods-list li {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.payment-methods-list img {
+  display: block;
+  max-height: 1.15rem;
+  max-width: 2.75rem;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 560px) {
+  .payment-methods-list {
+    gap: 0.35rem;
+  }
+
+  .payment-methods-list li {
+    height: 1.85rem;
+    min-width: 2.75rem;
+    padding: 0.15rem 0.35rem;
+  }
+
+  .payment-methods-list img {
+    max-height: 1rem;
+    max-width: 2.35rem;
+  }
+}

@@ -1,0 +1,95 @@
+.content-page {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  max-width: 42rem;
+}
+
+.content-page-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: color 0.25s var(--ease);
+}
+
+.content-page-back:hover {
+  color: var(--ink);
+}
+
+.content-page-eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.content-page h1 {
+  margin: 0.55rem 0 0;
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+.content-page-summary {
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.content-page-sections {
+  display: grid;
+  gap: 1.75rem;
+  margin-top: 2.25rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.content-page-sections h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.content-page-sections p {
+  margin: 0 0 0.65rem;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+.content-page-sections p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 560px) {
+  .content-page {
+    padding: 0.85rem 0.25rem 2rem;
+  }
+
+  .content-page-back {
+    margin-bottom: 1.15rem;
+  }
+
+  .content-page h1 {
+    font-size: clamp(1.65rem, 8vw, 2.1rem);
+  }
+
+  .content-page-summary {
+    font-size: 0.98rem;
+  }
+
+  .content-page-sections {
+    gap: 1.35rem;
+    margin-top: 1.65rem;
+    padding-top: 1.35rem;
+  }
+}

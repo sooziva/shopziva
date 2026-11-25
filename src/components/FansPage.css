@@ -1,0 +1,265 @@
+.fans-page {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  padding-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.fans-page-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: color 0.25s var(--ease);
+}
+
+.fans-page-back:hover {
+  color: var(--ink);
+}
+
+.fans-page-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: clamp(1.25rem, 2.5vw, 1.85rem);
+  min-height: clamp(17rem, 38vw, 24rem);
+  background: #111;
+  color: #fff;
+}
+
+.fans-page-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.fans-page-hero-wash {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      105deg,
+      rgba(10, 10, 10, 0.74) 0%,
+      rgba(10, 10, 10, 0.34) 46%,
+      rgba(10, 10, 10, 0.1) 100%
+    ),
+    linear-gradient(180deg, transparent 50%, rgba(10, 10, 10, 0.42) 100%);
+}
+
+.fans-page-hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 28rem;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.fans-page-eyebrow,
+.fans-page-catalog-eyebrow {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.fans-page-eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.fans-page-hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+}
+
+.fans-page-lead {
+  margin: 0.85rem 0 0;
+  max-width: 30ch;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.fans-page-catalog {
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.fans-page-catalog-header {
+  max-width: 34rem;
+  margin: 0 0 clamp(1.35rem, 3vw, 2rem);
+  padding-inline: 0.15rem;
+}
+
+.fans-page-catalog-header h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3.6vw, 2.45rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.fans-page-catalog-lead {
+  margin: 0.7rem 0 0;
+  max-width: 34ch;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.fans-page-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.2rem);
+  max-width: 46rem;
+}
+
+.fans-page-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.fans-page-media {
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: clamp(1.1rem, 2vw, 1.45rem);
+  background: #f2f2f2;
+}
+
+.fans-page-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+  transition: transform 0.55s var(--ease);
+}
+
+.fans-page-card:hover .fans-page-media img {
+  transform: scale(1.03);
+}
+
+.fans-page-card-body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-inline: 0.15rem;
+}
+
+.fans-page-info {
+  display: block;
+  min-width: 0;
+  color: inherit;
+}
+
+.fans-page-name {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.fans-page-price {
+  margin: 0.25rem 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.fans-page-add {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition:
+    background 0.25s var(--ease),
+    color 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+
+.fans-page-add:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .fans-page {
+    padding: 0.85rem 0.15rem 2rem;
+  }
+
+  .fans-page-hero {
+    min-height: min(52svh, 18rem);
+    border-radius: 1.25rem;
+  }
+
+  .fans-page-hero-copy {
+    padding: 1.25rem 1.1rem 1.35rem;
+  }
+
+  .fans-page-hero-copy h1 {
+    font-size: clamp(1.85rem, 9vw, 2.35rem);
+  }
+
+  .fans-page-lead {
+    font-size: 0.95rem;
+  }
+
+  .fans-page-catalog {
+    margin-top: 1.35rem;
+  }
+
+  .fans-page-catalog-header h2 {
+    font-size: clamp(1.45rem, 7vw, 1.85rem);
+  }
+
+  .fans-page-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    max-width: none;
+  }
+
+  .fans-page-media {
+    aspect-ratio: 3 / 4;
+    border-radius: 1rem;
+  }
+
+  .fans-page-name {
+    font-size: 0.8rem;
+  }
+
+  .fans-page-price {
+    font-size: 0.78rem;
+  }
+
+  .fans-page-add {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .fans-page-grid {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
+  }
+
+  .fans-page-media {
+    aspect-ratio: 5 / 6;
+  }
+}
