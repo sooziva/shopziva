@@ -5,6 +5,8 @@ import 'dotenv/config'
 const baseURL =
   process.env.BETTER_AUTH_URL ?? 'http://localhost:5173'
 
+const productionOrigin = 'https://shop.sooziva.com'
+
 export const adminEmails = (process.env.ADMIN_EMAILS ?? 'admin@shopziva.com')
   .split(',')
   .map((email) => email.trim().toLowerCase())
@@ -17,6 +19,7 @@ export const auth = betterAuth({
   trustedOrigins: [
     'http://localhost:5173',
     'http://127.0.0.1:5173',
+    productionOrigin,
     baseURL,
   ],
   emailAndPassword: {

@@ -25,6 +25,22 @@ type CheckoutSession = {
   publicKey: string | null
 }
 
+async function readJsonResponse<T extends { error?: string }>(
+  response: Response,
+  fallbackError: string,
+): Promise<T> {
+  const text = await response.text()
+  try {
+    return JSON.parse(text) as T
+  } catch {
+    throw new Error(
+      response.ok
+        ? fallbackError
+        : `Checkout API unavailable (${response.status}). Deploy the /api server and set DATABASE_URL on Vercel.`,
+    )
+  }
+}
+
 async function createCheckoutSession(
   email: string,
   items: CartItem[],
@@ -44,9 +60,10 @@ async function createCheckoutSession(
     }),
   })
 
-  const payload = (await response.json()) as CheckoutSession & {
-    error?: string
-  }
+  const payload = await readJsonResponse<CheckoutSession & { error?: string }>(
+    response,
+    'Could not create checkout session.',
+  )
 
   if (!response.ok) {
     throw new Error(payload.error || 'Could not create checkout session.')
@@ -62,11 +79,11 @@ async function verifyCheckout(reference: string) {
     body: JSON.stringify({ reference }),
   })
 
-  const payload = (await response.json()) as {
+  const payload = await readJsonResponse<{
     ok?: boolean
     error?: string
     status?: string
-  }
+  }>(response, 'Could not verify payment.')
 
   if (!response.ok || !payload.ok) {
     throw new Error(payload.error || 'Could not verify payment.')
