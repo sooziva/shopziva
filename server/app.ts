@@ -1,8 +1,8 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
-import { pool, query } from './db'
-import { verifyPaystackTransaction } from './paystack'
-import { auth, isAdminEmail } from './auth'
+import { pool, query } from './db.js'
+import { verifyPaystackTransaction } from './paystack.js'
+import { auth, isAdminEmail } from './auth.js'
 
 type CartItemInput = {
   id: string

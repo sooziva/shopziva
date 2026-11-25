@@ -1,5 +1,5 @@
 import { betterAuth } from 'better-auth'
-import { pool } from './db'
+import { pool } from './db.js'
 import 'dotenv/config'
 
 const baseURL =
@@ -15,7 +15,10 @@ export const adminEmails = (process.env.ADMIN_EMAILS ?? 'admin@shopziva.com')
 export const auth = betterAuth({
   database: pool,
   baseURL,
-  secret: process.env.BETTER_AUTH_SECRET,
+  // Fallback avoids cold-start crash if the env var is missing on Vercel.
+  secret:
+    process.env.BETTER_AUTH_SECRET ??
+    'dev-only-change-me-shopziva-better-auth-secret',
   trustedOrigins: [
     'http://localhost:5173',
     'http://127.0.0.1:5173',
